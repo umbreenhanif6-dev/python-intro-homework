@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 x = int(input("Enter a number: "))
 
 if x < 0: 
@@ -11,7 +10,7 @@ if x % 2 == 0:
 	print("The number is even. ")
 else: 
 	print("The number is odd. ")
-=======
+
 # Write a script that evaluates the five expressions below and prints each one with its result. 
 # Add a comment on each line explaining why the result is what it is:
 print(not True and False) 
@@ -29,4 +28,3 @@ print(not False or not True)
 # True is output because the statement is basically saying true or
 # false. When the 'or' operator is present, one condition must be true in order to 
 # have a 'True' output
->>>>>>> 78481ff (add warmup3 for assignment 3)

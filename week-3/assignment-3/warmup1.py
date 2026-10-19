@@ -1,8 +1,4 @@
-score = 59
-
-if score < 60:
-    print(f"Score: {score}")
-    print("Grade: F")
+score = int(input("Enter your score (0-100): "))
 print(f"Score: {score}")
 if score >= 90:
     print("Grade: A")
