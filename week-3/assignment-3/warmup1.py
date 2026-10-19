@@ -1,5 +1,6 @@
 score = int(input("Enter your score (0-100): "))
 print(f"Score: {score}")
+
 if score >= 90:
     print("Grade: A")
 elif score >= 80:
@@ -10,4 +11,3 @@ elif score >= 60:
     print("Grade: D")
 else:
     print("Grade: F")
-
