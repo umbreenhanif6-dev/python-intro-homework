@@ -18,8 +18,12 @@ elif day == "Saturday":
           print("Have lunch. ")
      elif time == "Evening":
           print("Go bowling with friends. ")
+<<<<<<< HEAD
      else:
            print("Invalid time, try again.")	
+=======
+          print("Invalid time, try again.")	
+>>>>>>> 78481ff (add warmup3 for assignment 3)
 
 elif day ==  "Friday": 
      if time == "Morning": 
