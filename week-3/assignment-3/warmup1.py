@@ -1,4 +1,4 @@
-score = 59
+score = int(input("Enter your score (0-100): "))
 print(f"Score: {score}")
 
 if score >= 90:
