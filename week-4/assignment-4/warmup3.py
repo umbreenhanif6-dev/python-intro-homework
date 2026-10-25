@@ -1,0 +1,18 @@
+"""""
+Warmup 3: Set Operations
+Create two hardcoded lists of programming languages (some overlap, some unique to each list). Convert each to a set and print:
+1.The union (all languages from both lists, no duplicates)
+2.The intersection (languages in both lists)
+3.The difference (languages only in the first list)
+"""""
+set_a = {'html', 'sql', 'css', 'javascript', 'python'}
+set_b = {'sql', 'python', 'c', 'c++', 'javascript'} 
+
+# The union (all languages from both lists, no duplicates) 
+print(set_a.union(set_b)) 
+
+# The intersection (languages in both lists)
+print(set_a.intersection(set_b)) 
+
+#The difference (languages only in the first list)
+print(set_a.difference(set_b))
