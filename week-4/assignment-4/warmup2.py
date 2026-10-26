@@ -6,20 +6,18 @@ Create a hardcoded dictionary representing a student with these keys: name, grad
 """
 
 student = {
-    "Name": "Aiden",
-    "Grade": 12,
-    "Subjects": ["Literature", "Mathematics", "Earth Science"]
+    "name": "Aiden",
+    "grade": 12,
+    "subjects": ["Literature", "Mathematics", "Earth Science"]
 }
-
+print("\nOriginal Student Entry:\n")
 for key, value in student.items():
     if isinstance(value, list):
         value = ", ".join(value)
     print(f"{key}: {value}")
 
-print()
-
-student["Graduated"] = False
-print("Updated Student Entry:")
+student["graduated"] = False
+print("\nUpdated Student Entry:\n")
 for key, value in student.items():
     if isinstance(value, list):
         value = ", ".join(value)
