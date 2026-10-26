@@ -1,4 +1,4 @@
-"""""
+"""
 Part 2: Mini-Project — Student Roster Analyzer
 A data file is provided in week-4/data/roster.py. Copy the students list from that file into your script — it contains dictionaries with name, score, and subject fields.
 Using loops and data structure operations, your script must:
@@ -6,7 +6,9 @@ Using loops and data structure operations, your script must:
 2.Calculate the class average — accumulate the total score in a loop, then divide.
 3.List all unique subjects — use a set to collect subjects as you loop, then print them.
 4.List high scorers — use a loop and .append() to get the names of all students who scored above 75.
-"""""
+
+"""
+
 
 students = [
     {"name": "Jazmine", "score": 88, "subject": "Python"},
@@ -45,7 +47,7 @@ for student in students:
     current_best_student["score"] = student["score"]
     current_best_student["name"] = student["name"]
 
-print(f"The student with the highest grade is{current_best_student['name']} with a score of {current_best_student['score']}.")
+print(f"The student with the highest grade is {current_best_student['name']} with a score of {current_best_student['score']}.")
     
 
 # Calculate the class average: accumulate the total score in a loop, then divide.
