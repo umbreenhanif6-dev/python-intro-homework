@@ -8,9 +8,22 @@ Create a hardcoded dictionary representing a student with these keys: name, grad
 
 """""
 
-student = { "name" :  "Aiden", "grade":  12,  "subject" : ["literature"] }
-for key, value in student.items():
-	print(f"{key}: {value}")
+student = {
+    "Name": "Aiden",
+    "Grade": 12,
+    "Subjects": ["Literature", "Mathematics", "Earth Science"]
+}
 
-student["graduated"] = False
-print(f"Updated student information: {student}")
+for key, value in student.items():
+    if isinstance(value, list):
+        value = ", ".join(value)
+    print(f"{key}: {value}")
+
+print("\nUpdated Student Entry:\n")  # Heading between the outputs
+
+student["Graduated"] = False
+
+for key, value in student.items():
+    if isinstance(value, list):
+        value = ", ".join(value)
+    print(f"{key}: {value}")
