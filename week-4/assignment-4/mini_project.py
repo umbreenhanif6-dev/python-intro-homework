@@ -45,7 +45,7 @@ for student in students:
     current_best_student["score"] = student["score"]
     current_best_student["name"] = student["name"]
 
-print(f"The student with the highest grade is{current_best_student['name']} with a score of {current_best_student['score']}.")
+print(f"The student with the highest grade is {current_best_student['name']} with a score of {current_best_student['score']}.")
     
 
 # Calculate the class average: accumulate the total score in a loop, then divide.
