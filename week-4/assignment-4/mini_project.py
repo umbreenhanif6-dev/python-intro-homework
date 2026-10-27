@@ -8,8 +8,6 @@ Using loops and data structure operations, your script must:
 4.List high scorers — use a loop and .append() to get the names of all students who scored above 75.
 
 """
-#testing a change
-
 students = [
     {"name": "Jazmine", "score": 88, "subject": "Python"},
     {"name": "Luis",    "score": 74, "subject": "Data"},
@@ -69,7 +67,7 @@ for student in students:
     score = student["score"]
     total = total + score
 class_average = total / score_count
-print(f"The class average is {class_average:.2f}.")
+print(f"\nThe class average is {class_average:.2f}.\n")
 
 # List all unique subjects 
 students = [
@@ -83,11 +81,13 @@ students = [
     {"name": "Eli",     "score": 79, "subject": "Data"},
 ]
 
-class_subjects = []
-for student in students: 
+class_subjects = set()
+
+for student in students:
     subject = student["subject"]
-    class_subjects.append(subject)
-print(f"The unique subjects in the class are: {', '.join(set(class_subjects))}.")
+    class_subjects.add(subject)
+
+print(f"\nThe unique subjects in the class are: {', '.join(sorted(class_subjects))}.\n")
 
 # List high scorers use a loop and .append() to get the names of all students who scored above 75.
 
@@ -102,10 +102,9 @@ students = [
     {"name": "Eli",     "score": 79, "subject": "Data"},
 ]
 
-
 high_scorers = []
 for student in students:
     score = student["score"]
     if student["score"] > 75:
         high_scorers.append(student["name"])
-print(f"The highest scoring students who scored above a 75 are {', '.join(high_scorers)}.")
+print(f"\nThe highest scoring students who scored above a 75 are {', '.join(high_scorers)}.\n")
