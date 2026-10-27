@@ -36,10 +36,8 @@ for student in students:
 
 print(f"\nThe student with the highest grade is {current_best_student['name']} with a score of {current_best_student['score']}.\n")
     
-
 # Calculate the class average: accumulate the total score in a loop, then divide.
  # to get the average, take all scores and divide by the number of scores 
-
 
 score_count = len(students)
 total = 0 
