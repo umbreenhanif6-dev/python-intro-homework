@@ -8,8 +8,6 @@ Using loops and data structure operations, your script must:
 4.List high scorers — use a loop and .append() to get the names of all students who scored above 75.
 
 """
-
-
 students = [
     {"name": "Jazmine", "score": 88, "subject": "Python"},
     {"name": "Luis",    "score": 74, "subject": "Data"},
@@ -26,17 +24,6 @@ students = [
 
 # List of student dictionaries
 
-students = [
-    {"name": "Jazmine", "score": 88, "subject": "Python"},
-    {"name": "Luis",    "score": 74, "subject": "Data"},
-    {"name": "Sara",    "score": 91, "subject": "Python"},
-    {"name": "Marcus",  "score": 68, "subject": "Web"},
-    {"name": "Priya",   "score": 95, "subject": "Data"},
-    {"name": "Devon",   "score": 72, "subject": "Python"},
-    {"name": "Mia",     "score": 83, "subject": "Web"},
-    {"name": "Eli",     "score": 79, "subject": "Data"},
-] # <-- 
-
 # student -> {"name": "Jazmine", "score": 88, "subject": "Python"}
 
 # Create The best student dict to represent the current best student
@@ -47,21 +34,10 @@ for student in students:
     current_best_student["score"] = student["score"]
     current_best_student["name"] = student["name"]
 
-print(f"The student with the highest grade is {current_best_student['name']} with a score of {current_best_student['score']}.")
+print(f"\nThe student with the highest grade is {current_best_student['name']} with a score of {current_best_student['score']}.\n")
     
-
 # Calculate the class average: accumulate the total score in a loop, then divide.
  # to get the average, take all scores and divide by the number of scores 
-students = [
-    {"name": "Jazmine", "score": 88, "subject": "Python"},
-    {"name": "Luis",    "score": 74, "subject": "Data"},
-    {"name": "Sara",    "score": 91, "subject": "Python"},
-    {"name": "Marcus",  "score": 68, "subject": "Web"},
-    {"name": "Priya",   "score": 95, "subject": "Data"},
-    {"name": "Devon",   "score": 72, "subject": "Python"},
-    {"name": "Mia",     "score": 83, "subject": "Web"},
-    {"name": "Eli",     "score": 79, "subject": "Data"},
-]
 
 score_count = len(students)
 total = 0 
@@ -69,43 +45,23 @@ for student in students:
     score = student["score"]
     total = total + score
 class_average = total / score_count
-print(f"The class average is {class_average:.2f}.")
+print(f"\nThe class average is {class_average:.2f}.\n")
 
 # List all unique subjects 
-students = [
-    {"name": "Jazmine", "score": 88, "subject": "Python"},
-    {"name": "Luis",    "score": 74, "subject": "Data"},
-    {"name": "Sara",    "score": 91, "subject": "Python"},
-    {"name": "Marcus",  "score": 68, "subject": "Web"},
-    {"name": "Priya",   "score": 95, "subject": "Data"},
-    {"name": "Devon",   "score": 72, "subject": "Python"},
-    {"name": "Mia",     "score": 83, "subject": "Web"},
-    {"name": "Eli",     "score": 79, "subject": "Data"},
-]
 
-class_subjects = []
-for student in students: 
+class_subjects = set()
+
+for student in students:
     subject = student["subject"]
-    class_subjects.append(subject)
-print(f"The unique subjects in the class are: {', '.join(set(class_subjects))}.")
+    class_subjects.add(subject)
+
+print(f"\nThe unique subjects in the class are: {', '.join(sorted(class_subjects))}.\n")
 
 # List high scorers use a loop and .append() to get the names of all students who scored above 75.
-
-students = [
-    {"name": "Jazmine", "score": 88, "subject": "Python"},
-    {"name": "Luis",    "score": 74, "subject": "Data"},
-    {"name": "Sara",    "score": 91, "subject": "Python"},
-    {"name": "Marcus",  "score": 68, "subject": "Web"},
-    {"name": "Priya",   "score": 95, "subject": "Data"},
-    {"name": "Devon",   "score": 72, "subject": "Python"},
-    {"name": "Mia",     "score": 83, "subject": "Web"},
-    {"name": "Eli",     "score": 79, "subject": "Data"},
-]
-
 
 high_scorers = []
 for student in students:
     score = student["score"]
     if student["score"] > 75:
         high_scorers.append(student["name"])
-print(f"The highest scoring students who scored above a 75 are {', '.join(high_scorers)}.")
+print(f"\nThe highest scoring students who scored above a 75 are {', '.join(high_scorers)}.\n")
