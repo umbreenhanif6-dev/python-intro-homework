@@ -8,7 +8,7 @@ Using loops and data structure operations, your script must:
 4.List high scorers — use a loop and .append() to get the names of all students who scored above 75.
 
 """
-
+#testing a change
 
 students = [
     {"name": "Jazmine", "score": 88, "subject": "Python"},
@@ -47,7 +47,7 @@ for student in students:
     current_best_student["score"] = student["score"]
     current_best_student["name"] = student["name"]
 
-print(f"The student with the highest grade is {current_best_student['name']} with a score of {current_best_student['score']}.")
+print(f"\nThe student with the highest grade is {current_best_student['name']} with a score of {current_best_student['score']}.\n")
     
 
 # Calculate the class average: accumulate the total score in a loop, then divide.
