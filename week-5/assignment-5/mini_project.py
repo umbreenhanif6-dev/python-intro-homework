@@ -42,12 +42,12 @@ while select != "5":
         guess = int(input("\nEnter a number to search for: "))
         found = False
 
-        for num in enumerate(numbers):
+        for index, num in enumerate(numbers):
             if guess == num:
                 found = True
                 break
         if found:
-            print(f"{guess} is in the list.\n")
+            print(f"{guess} is in the list at index {index}.\n")
         else:
             print(f"{guess} is not in the list.\n")
 
