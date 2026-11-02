@@ -12,7 +12,7 @@ while True:
     try:
         user_input = int(input("Please enter a positive integer. "))
         if user_input > 0: 
-            print(f"You are correct!", f"{user_input} is a positive integer!")
+            print(f"You are correct!, {user_input} is a positive integer!")
             break 
         else: 
             print("Try another integer.")
