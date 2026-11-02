@@ -40,7 +40,13 @@ while select != "5":
 
     elif select == "3":
         guess = int(input("\nEnter a number to search for: "))
-        if guess in numbers:
+        found = False
+
+        for num in numbers:
+            if guess == num:
+                found = True
+               # break
+        if found:
             print(f"{guess} is in the list.\n")
         else:
             print(f"{guess} is not in the list.\n")
