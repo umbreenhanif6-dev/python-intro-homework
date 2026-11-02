@@ -46,7 +46,7 @@ while select != "5":
             print(f"{guess} is not in the list.\n")
 
     elif select == "4":
-        swapped = False
+        swapped = True
 
         while swapped:
             swapped = False
@@ -54,7 +54,7 @@ while select != "5":
                 if numbers[num] > numbers[num + 1]:
                     numbers[num], numbers[num + 1] = numbers[num + 1], numbers[num]
                     swapped = True 
-                print(f"\nThe list has been sorted from lowest to highest value: {numbers}\n")
+        print(f"\nThe list has been sorted from lowest to highest value: {numbers}\n")
 
     elif select == "5":
         print("\nExiting the program. Goodbye!\n")
