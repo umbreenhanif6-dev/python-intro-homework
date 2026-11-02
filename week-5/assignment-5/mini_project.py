@@ -45,7 +45,7 @@ while select != "5":
         for num in numbers:
             if guess == num:
                 found = True
-               # break
+        
         if found:
             print(f"{guess} is in the list.\n")
         else:
