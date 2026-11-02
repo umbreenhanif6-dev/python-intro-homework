@@ -42,7 +42,7 @@ while select != "5":
         guess = int(input("\nEnter a number to search for: "))
         found = False
 
-        for num in numbers:
+        for num in enumerate(numbers):
             if guess == num:
                 found = True
                 break
