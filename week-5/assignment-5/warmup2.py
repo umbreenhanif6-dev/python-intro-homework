@@ -10,9 +10,9 @@ Use a while loop that repeatedly asks the user to enter a positive integer.
 
 while True:
     try:
-        user_input = int(input("Please enter a positive integer."))
+        user_input = int(input("Please enter a positive integer. "))
         if user_input > 0: 
-            print(f"You are correct!" f"{user_input} is a positive integer!")
+            print(f"You are correct!", f"{user_input} is a positive integer!")
             break 
         else: 
             print("Try another integer.")
