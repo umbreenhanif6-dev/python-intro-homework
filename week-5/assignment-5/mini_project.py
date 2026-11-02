@@ -67,5 +67,3 @@ while select != "5":
 
     else:
         print("\nInvalid option. Please choose a number between 1 and 5.\n")
-
-
