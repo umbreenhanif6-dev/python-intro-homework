@@ -33,7 +33,6 @@ def bubble_sort(numbers):
                     swapped = True 
     return sorted_numbers [:]
 
-
 def show_menu(): 
 
     print("1. Find minimum")
