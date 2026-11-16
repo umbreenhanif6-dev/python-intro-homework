@@ -12,7 +12,7 @@ if os.path.exists(file_path):
     print(f"The file '{file_path}' exists.")
 else: 
     print(f"The file '{file_path}' does not exist.")
-git 
+
 # read the csv file into a list of dictionaries
 
 expenses = []
@@ -47,9 +47,15 @@ import csv
 import datetime
 d = datetime.date.today()
 
+import csv
+import datetime
+d = datetime.date.today()
+
 with open("food_report.txt", "w") as file:
-    file.write(f"Food Expense Report - generated {d.strftime('%B %d, %Y')}\n")
+    file.write(f"Food Expense Report - generated {d.strftime('%B %d, %Y')} \n \n")
+    total = 0
     for entry in expenses:
         if entry["category"] == "Food":
-            file.write(f"{entry['date']}: {float(entry['amount']):.2f}  \n")
-            
+            file.write(f"Date: {entry['date']}, Amount: ${float(entry['amount']):.2f}\n")
+            total += float(entry["amount"])
+    file.write(f"Total: ${total:.2f} \n")
