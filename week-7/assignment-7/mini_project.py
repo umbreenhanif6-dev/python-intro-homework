@@ -6,6 +6,7 @@ If it doesn't, print an error message and stop.
 """
 import os
 import csv
+import datetime
 
 file_path = '../data/expenses.csv'
 if os.path.exists(file_path):
@@ -43,13 +44,6 @@ for entry in expenses:
         total += float(entry["amount"])
 print(f"The total for Food is ${total:.2f}.")
 
-
-import csv
-import datetime
-d = datetime.date.today()
-
-import csv
-import datetime
 d = datetime.date.today()
 
 with open("food_report.txt", "w") as file:
@@ -57,6 +51,6 @@ with open("food_report.txt", "w") as file:
     total = 0
     for entry in expenses:
         if entry["category"] == "Food":
-            file.write(f"Date: {entry['date']}, Amount: ${float(entry['amount']):.2f}\n")
+            file.write(f"{entry['date']}: ${float(entry['amount']):.2f}\n")
             total += float(entry["amount"])
     file.write(f"Total: ${total:.2f} \n")
