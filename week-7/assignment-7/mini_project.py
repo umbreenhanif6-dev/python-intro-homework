@@ -37,20 +37,23 @@ for entry in expenses:
 print(food_expenses) 
 
 # Calculate the total amount spent on Food.
+total = 0
 
-total = 0 
 for entry in expenses:
-    if entry["category"].lower() == "food":
-        total += float(entry["amount"])
+    if entry["category"].strip().lower() == "food":
+        total += entry["amount"]
+
 print(f"The total for Food is ${total:.2f}.")
 
 d = datetime.date.today()
 
 with open("food_report.txt", "w") as file:
-    file.write(f"Food Expense Report - generated {d.strftime('%B %d, %Y')} \n \n")
-    total = 0
+    file.write(
+        f"Food Expense Report - generated {d.strftime('%B %d, %Y')}\n\n"
+    )
+
     for entry in expenses:
-        if entry["category"] == "Food":
-            file.write(f"{entry['date']}: ${float(entry['amount']):.2f}\n")
-            total += float(entry["amount"])
-    file.write(f"Total: ${total:.2f} \n")
+        if entry["category"].strip().lower() == "food":
+            file.write(f"{entry['date']}: ${entry['amount']:.2f}\n")
+
+    file.write(f"Total: ${total:.2f}\n")
