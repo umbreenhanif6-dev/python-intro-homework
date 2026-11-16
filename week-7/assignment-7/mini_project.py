@@ -4,8 +4,6 @@ Follow these steps:
 Use os.path.exists() to verify that ../data/expenses.csv exists before opening it.
 If it doesn't, print an error message and stop.
 """
-
-
 import os
 import csv
 
@@ -14,19 +12,7 @@ if os.path.exists(file_path):
     print(f"The file '{file_path}' exists.")
 else: 
     print(f"The file '{file_path}' does not exist.")
-
-"""
-Read ../data/expenses.csv into a list of dictionaries using csv.DictReader.
-Convert the amount field to float for each row.
-Filter the list to only rows where category is "Food".
-Calculate the total amount spent on Food.
-"""
-""" read the csv file and print its contents as is: 
-with open(file_path, 'r') as file:
-    content = file.read()
-    print(content)
-    file.close()"""
-
+git 
 # read the csv file into a list of dictionaries
 
 expenses = []
@@ -35,8 +21,35 @@ with open(file_path, "r") as file:
 
     for entry in reader: 
         expenses.append(entry)
-  #  print(expenses)
-  #Convert the amount field to float for each row.
+
+#Convert the amount field to float for each row.
     for expense in expenses:
         expense['amount'] = float(expense['amount'])
-    print(expenses)
+    print(expenses, "\n")
+
+#Filter the list to only rows where category is "Food".
+food_expenses = []
+for entry in expenses: 
+    if entry["category"] == "Food":
+       food_expenses.append(entry) 
+print(food_expenses) 
+
+# Calculate the total amount spent on Food.
+
+total = 0 
+for entry in expenses:
+    if entry["category"].lower() == "food":
+        total += float(entry["amount"])
+print(f"The total for Food is ${total:.2f}.")
+
+
+import csv
+import datetime
+d = datetime.date.today()
+
+with open("food_report.txt", "w") as file:
+    file.write(f"Food Expense Report - generated {d.strftime('%B %d, %Y')}\n")
+    for entry in expenses:
+        if entry["category"] == "Food":
+            file.write(f"{entry['date']}: {float(entry['amount']):.2f}  \n")
+            
