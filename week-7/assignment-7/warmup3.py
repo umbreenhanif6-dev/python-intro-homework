@@ -2,7 +2,7 @@ import os
 print(os.getcwd())
 
 if os.path.exists("C:\\Umbreen\\python-intro-homework\\week-7\\data\\expenses.csv"):
-    print("expenses.csv found")
+    print("expenses.csv found.")
 else:
     print("expenses.csv not found.")
 
