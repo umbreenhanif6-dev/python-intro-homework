@@ -1,4 +1,5 @@
 """
+Warmup 2: Safe Division
 Ask the user for two numbers. Compute the result of 
 dividing the first by the second. Use try/except ZeroDivisionError 
 to catch division by zero and print a friendly message instead of crashing.
