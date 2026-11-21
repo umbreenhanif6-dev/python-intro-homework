@@ -8,6 +8,7 @@ attempted = 0
 parsed = 0
 skipped = 0
 
+
 def has_missing_fields(row):
     if row["name"] is None or not row["name"].strip():
         return True
@@ -18,6 +19,7 @@ def has_missing_fields(row):
 
     return False
 
+
 try:
     with open("../data/messy_data.csv", "r") as file:
         reader = csv.DictReader(file)
@@ -25,15 +27,15 @@ try:
         for row_number, row in enumerate(reader, start=1):
             attempted += 1
 
-            if None in row:
-                skipped_rows.append({
-                    "row": row_number,
-                    "reason": "Extra column detected."
-                })
-                skipped += 1
+            try:
+                if None in row:
+                    skipped_rows.append({
+                        "row": row_number,
+                        "reason": "Extra column detected."
+                    })
+                    skipped += 1
 
-            else:
-                if has_missing_fields(row):
+                elif has_missing_fields(row):
                     skipped_rows.append({
                         "row": row_number,
                         "reason": "Missing or blank field."
@@ -41,34 +43,34 @@ try:
                     skipped += 1
 
                 else:
-                    try:
-                        new_row = {
-                            "name": row["name"],
-                            "category": row["category"],
-                            "amount": float(row["amount"])
-                        }
+                    new_row = {
+                        "name": row["name"],
+                        "category": row["category"],
+                        "amount": float(row["amount"])
+                    }
 
-                        clean_data.append(new_row)
-                        parsed += 1
+                    clean_data.append(new_row)
+                    parsed += 1
 
-                    except ValueError:
-                        skipped_rows.append({
-                            "row": row_number,
-                            "reason": "Could not convert entry to float."
-                        })
-                        skipped += 1
+            except ValueError:
+                skipped_rows.append({
+                    "row": row_number,
+                    "reason": "Could not convert entry to float."
+                })
+                skipped += 1
 
-                    except KeyError:
-                        skipped_rows.append({
-                            "row": row_number,
-                            "reason": "Missing expected column."
-                        })
-                        skipped += 1
+            except KeyError:
+                skipped_rows.append({
+                    "row": row_number,
+                    "reason": "Missing expected column."
+                })
+                skipped += 1
 
         print("File exists.")
         print("Rows attempted:", attempted)
         print("Rows parsed:", parsed)
         print("Rows skipped:", skipped)
+
         print("Skipped row details:")
         for item in skipped_rows:
             print(item)
